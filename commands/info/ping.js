@@ -8,6 +8,6 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, message, args) => {
-        message.reply(`🏓Latency is ${Date.now()} - ${message.timestamp}ms.`);
+        message.reply(`🏓Latency is ${Date.now() - message.timestamp}ms.`);
     }
 }
