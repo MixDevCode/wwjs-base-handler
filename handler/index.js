@@ -7,7 +7,6 @@ const globPromise = promisify(glob);
 /**
  * @param {Client} client
  */
-
 module.exports = async (client) => {
     // Commands
     const commandFiles = await globPromise(`commands/**/*.js`);
@@ -22,6 +21,7 @@ module.exports = async (client) => {
         }
     });
 
+    // Events
     const eventFiles = await globPromise(`events/*.js`);
     eventFiles.map((value) => require('../' + value));
 }
